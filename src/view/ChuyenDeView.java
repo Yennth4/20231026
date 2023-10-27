@@ -7,10 +7,11 @@ import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import model.ChuyenDe;
 import repository.ChuyenDeRepository;
+import service.ChuyenDeService;
 
 public class ChuyenDeView extends javax.swing.JFrame {
 
-    ChuyenDeRepository service = new ChuyenDeRepository();
+    ChuyenDeService service = new ChuyenDeService();
     List<ChuyenDe> listChuyenDe = new ArrayList<>();
     DefaultTableModel dtm;
 

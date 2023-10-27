@@ -7,8 +7,9 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import model.ChuyenDe;
+import service.ChuyenDeInterface;
 
-public class ChuyenDeRepository {
+public class ChuyenDeRepository implements ChuyenDeInterface<ChuyenDe> {
 
     private Connection conn;
 
@@ -20,6 +21,7 @@ public class ChuyenDeRepository {
         }
     }
 
+    @Override
     public List<ChuyenDe> getAll() {
         List<ChuyenDe> list = new ArrayList<>();
         try {
@@ -37,6 +39,7 @@ public class ChuyenDeRepository {
         return list;
     }
 
+    @Override
     public void them(ChuyenDe chuyenDe) throws Exception {
         try {
             String query = """
@@ -59,6 +62,7 @@ public class ChuyenDeRepository {
         }
     }
 
+    @Override
     public void sua(ChuyenDe chuyenDe) throws Exception {
         try {
             String query = """
@@ -81,6 +85,7 @@ public class ChuyenDeRepository {
         }
     }
 
+    @Override
     public void xoa(int index) throws Exception {
         try {
             String query = """
@@ -100,6 +105,7 @@ public class ChuyenDeRepository {
         }
     }
 
+    @Override
     public List<ChuyenDe> sortGiamDan() {
         List<ChuyenDe> list = new ArrayList<>();
         try {
@@ -117,6 +123,7 @@ public class ChuyenDeRepository {
         return list;
     }
 
+    @Override
     public List<ChuyenDe> search(ChuyenDe chuyenDe) {
         List<ChuyenDe> list = new ArrayList<>();
         try {
