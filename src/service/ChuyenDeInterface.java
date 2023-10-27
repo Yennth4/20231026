@@ -1,13 +1,18 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Interface.java to edit this template
- */
 package service;
 
-/**
- *
- * @author admin
- */
-public interface ChuyenDeInterface {
-    
+import java.util.List;
+
+public interface ChuyenDeInterface<T> {
+
+    public List<T> getAll();
+
+    public void them(T chuyenDe) throws Exception;
+
+    public void sua(T chuyenDe) throws Exception;
+
+    public void xoa(int index) throws Exception;
+
+    public List<T> sortGiamDan();
+
+    public List<T> search(T chuyenDe);
 }

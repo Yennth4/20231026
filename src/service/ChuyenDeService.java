@@ -1,13 +1,38 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package service;
 
-/**
- *
- * @author admin
- */
+import java.util.List;
+import model.ChuyenDe;
+import repository.ChuyenDeRepository;
+
 public class ChuyenDeService {
+
+    ChuyenDeRepository dao;
     
+    public ChuyenDeService() {
+        dao = new ChuyenDeRepository();
+    }
+    
+    public List<ChuyenDe> getAll() {
+        return dao.getAll();
+    }
+    
+    public void them(ChuyenDe chuyenDe) throws Exception {
+        dao.them(chuyenDe);
+    }
+    
+    public void sua(ChuyenDe chuyenDe) throws Exception {
+        dao.sua(chuyenDe);
+    }
+    
+    public void xoa(int index) throws Exception {
+        dao.xoa(index);
+    }
+    
+    public List<ChuyenDe> sortGiamDan() {
+        return dao.sortGiamDan();
+    }
+    
+    public List<ChuyenDe> search(ChuyenDe chuyenDe) {
+        return dao.search(chuyenDe);
+    }
 }
